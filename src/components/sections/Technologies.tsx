@@ -101,7 +101,7 @@ const Card = ({
 }) => {
   return (
     <div
-      className={`${className} flex flex-col items-center justify-center space-y-4`}
+      className={`${className ? className : ""} w-[100px] basis-[100px] flex flex-col items-center space-y-4 mx-4 my-5`}
     >
       {icon}
       <Typography variant="h4">{title}</Typography>
@@ -139,14 +139,14 @@ const Technologies = forwardRef(function Technologies(_props, ref) {
         style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
       >
         <Typography variant="h1">Technologies I Use</Typography>
-        <div>
+        <div className="w-full">
           <div
-            className="flex flex-col justify-center items-center space-y-8 mt-12 transition-opacity"
+            className="flex flex-col justify-center items-center space-y-8 mt-12 transition-opacity max-w-full"
             ref={sectionRefs.frontend}
             style={{transitionDelay: "150ms", animationDelay: "150ms", animationDuration: "1000ms", transitionDuration: "1000ms"}}
           >
             <Typography variant="h4">Front-end</Typography>
-            <div className="flex justify-center items-center space-x-8">
+            <div className="flex flex-wrap flex-row items-center justify-center max-w-[100%] ">
               <Card
                 className="space-y-[22px]"
                 title="React.js"
@@ -165,7 +165,7 @@ const Technologies = forwardRef(function Technologies(_props, ref) {
             style={{transitionDelay: "300ms", animationDelay: "300ms", animationDuration: "1000ms", transitionDuration: "1000ms"}}
           >
             <Typography variant="h4">Back-end</Typography>
-            <div className="flex justify-center items-center space-x-8">
+            <div className="flex flex-wrap justify-center items-center">
               {backend.map((item) => (
                 <Card key={item.title} title={item.title} icon={item.icon} />
               ))}
@@ -178,7 +178,7 @@ const Technologies = forwardRef(function Technologies(_props, ref) {
             style={{transitionDelay: "500ms", animationDelay: "500ms", animationDuration: "1000ms", transitionDuration: "1000ms"}}
           >
             <Typography variant="h4">Languages</Typography>
-            <div className="flex justify-center items-center space-x-8">
+            <div className="flex justify-center items-center flex-wrap">
               {languages.map((item) => (
                 <Card key={item.title} title={item.title} icon={item.icon} />
               ))}

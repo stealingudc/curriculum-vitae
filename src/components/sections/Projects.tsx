@@ -16,7 +16,7 @@ import {
   CardHeader,
   CardTitle,
 } from "../shadcn/ui/card";
-import { Link } from "lucide-react";
+import { Link, MoveHorizontal } from "lucide-react";
 
 const projects = [
   {
@@ -31,26 +31,37 @@ const projects = [
     description:
       "A webscraper that scrapes recipes from the Lidl website and returns them in JSON-serialized format. Built with Nest.js and PhantomJS.",
     image: "/lidl.png",
-    link: "https://github.com/stealingudc/lidl-recipe-scraper"
-  }
+    link: "https://github.com/stealingudc/lidl-recipe-scraper",
+  },
+  {
+    title: "View more on my GitHub",
+    description: "I have many more projects on my GitHub page.",
+    image: "/github.webp",
+    link: "https://github.com/stealingudc",
+  },
 ];
 
-const ProjectCard = (props: (typeof projects)[number]) => (
+const ProjectCard = ({
+  title,
+  description,
+  image,
+  link,
+}: (typeof projects)[number]) => (
   <>
     <Card className=" border-0">
-      <img className="border rounded-xl" src={props.image}></img>
+      <img className="border rounded-xl" src={image}></img>
       <CardHeader>
         <CardTitle className="mb-2 underline">
           <a
-            href={props.link}
+            href={link}
             target="_blank"
             className="hover:cursor-pointer flex items-center"
           >
-            {props.title}
+            {title}
             <Link className="ml-2" size={20} />
           </a>
         </CardTitle>
-        <CardDescription>{props.description}</CardDescription>
+        <CardDescription>{description}</CardDescription>
       </CardHeader>
     </Card>
   </>
@@ -62,16 +73,16 @@ const Projects = forwardRef(function Projects(_props, ref) {
       className="w-[100vw] min-h-[80vh] flex justify-center mb-12 transition-opacity duration-500"
     >
       <div
-        className=" w-[80vw] py-[100px] rounded-xl justify-between flex flex-col items-center"
+        className=" w-[80vw] rounded-xl pt-12 flex flex-col justify-center items-center"
         style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
       >
         <Typography variant="h1">My Projects</Typography>
-        <div>
+        <div className="mt-12 flex flex-row justify-center">
           <Carousel
             opts={{
               align: "start",
             }}
-            className="max-w-3xl"
+            className="sm:max-w-3xl max-w-[350px]"
           >
             <CarouselContent className="mx-4">
               {projects.map((project, i) => (
@@ -80,9 +91,13 @@ const Projects = forwardRef(function Projects(_props, ref) {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="sm:flex hidden" />
+            <CarouselNext className="sm:flex hidden" />
           </Carousel>
+        </div>
+        <div className="sm:hidden flex flex-col items-center">
+          <MoveHorizontal />
+          <p className=" text-neutral-400 italic">Swipe to see more...</p>
         </div>
       </div>
     </div>

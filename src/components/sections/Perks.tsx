@@ -21,7 +21,7 @@ const Card = forwardRef(function Card(
   return (
     <div
       ref={ref as ForwardedRef<HTMLDivElement>}
-      className={`flex items-center flex-col space-y-4 text-center px-12 transition-opacity`}
+      className={`flex items-center flex-col space-y-4 text-center px-12 transition-opacity md:mt-0 mt-12`}
       style={{transitionDelay: `${animationDelay}ms`, animationDelay: `${animationDelay}ms`, animationDuration: `${animationDuration}ms`, transitionDuration: `${animationDuration}ms`}}
     >
       <div
@@ -77,7 +77,7 @@ const Perks = forwardRef(function Perks(_props, ref) {
         style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
       >
         <Typography variant="h1">You come first.</Typography>
-        <div className="px-48 mt-8 text-center">
+        <div className="px-8 md:px-48 mt-8 text-center">
           <Typography variant="p">
             Throughout my time as a developer, I've gained a deep understanding
             of putting clients first and understanding their needs. I'm
@@ -86,7 +86,7 @@ const Perks = forwardRef(function Perks(_props, ref) {
           </Typography>
         </div>
 
-        <div className="grid grid-cols-3 justify-center mt-24">
+        <div className="md:grid md:grid-cols-3 justify-center md:mt-24 mt-0">
           <Card
             icon={<SearchCode color="#7e003f" />}
             color="#7e003f"
