@@ -1,4 +1,4 @@
-import React, { ForwardedRef, ReactNode, forwardRef } from "react";
+import { ForwardedRef, ReactNode, forwardRef } from "react";
 import Typography from "../typography";
 import { Link } from "lucide-react";
 import {
@@ -8,6 +8,10 @@ import {
   CardTitle,
 } from "../shadcn/ui/card";
 
+import UnitBV from "/unitbv.svg";
+import Code from "/code.svg";
+import Controller from "/controller.svg";
+
 type CardProps = {
   title: string;
   content: ReactNode;
@@ -15,7 +19,7 @@ type CardProps = {
   link?: string;
 };
 
-const AboutCard = forwardRef(function AboutCard(props: CardProps, ref) {
+const AboutCard = forwardRef(function AboutCard(props: CardProps, _ref) {
   const { title, content, image, link } = props;
   return (
     <Card
@@ -66,7 +70,7 @@ const cards: CardProps[] = [
         <span>in Brasov.</span>
       </>
     ),
-    image: "/unitbv.svg",
+    image: UnitBV,
     link: "https://iesc.unitbv.ro",
   },
   {
@@ -81,7 +85,7 @@ const cards: CardProps[] = [
         <span>to day-to-day problems that come up.</span>
       </>
     ),
-    image: "/code.svg",
+    image: Code,
   },
   {
     title: "I play lots of video games.",
@@ -99,7 +103,7 @@ const cards: CardProps[] = [
         <span>{" - "}the classics.</span>
       </>
     ),
-    image: "/controller.svg",
+    image: Controller,
   },
 ];
 

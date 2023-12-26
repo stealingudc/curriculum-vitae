@@ -1,4 +1,4 @@
-import React, { ForwardedRef, forwardRef } from "react";
+import { ForwardedRef, forwardRef } from "react";
 import Typography from "../typography";
 import {
   Carousel,
@@ -10,33 +10,35 @@ import {
 
 import {
   Card,
-  CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "../shadcn/ui/card";
 import { Link, MoveHorizontal } from "lucide-react";
+
+import BjorgArtImage from "/bjorgart.png";
+import LidlImage from "/lidl.png";
+import GitHubImage from "/github.webp";
 
 const projects = [
   {
     title: "BjorgArt",
     description:
       "A web store for a small business selling handmade leather and stained glass products. Built with Next.js, uses MongoDB and Google Cloud. Closed-source, as per the client's request.",
-    image: "/bjorgart.png",
+    image: BjorgArtImage,
     link: "https://bjorgart.vercel.app",
   },
   {
     title: "Lidl Recipe Webscraper",
     description:
       "A webscraper that scrapes recipes from the Lidl website and returns them in JSON-serialized format. Built with Nest.js and PhantomJS.",
-    image: "/lidl.png",
+    image: LidlImage,
     link: "https://github.com/stealingudc/lidl-recipe-scraper",
   },
   {
     title: "View more on my GitHub",
     description: "I have many more projects on my GitHub page.",
-    image: "/github.webp",
+    image: GitHubImage,
     link: "https://github.com/stealingudc",
   },
 ];
