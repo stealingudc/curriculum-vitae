@@ -23,13 +23,13 @@ const AboutCard = forwardRef(function AboutCard(props: CardProps, _ref) {
   const { title, content, image, link } = props;
   return (
     <Card
-      className="flex lg:flex-row flex-col sm:p-8 sm-[65%] lg:w-[80%] xl:w-[65%] w-[80%] p-0 self-center rounded-xl"
+      className="flex lg:flex-row flex-col sm:p-8 sm-[65%] lg:w-[80%] xl:w-[65%] w-[80%] p-0 self-center rounded-xl sm:text-start text-center"
       style={{
         background: "rgba(0, 0, 0, 0.8)",
         borderColor: "rgba(255, 255, 255, 0.4)",
       }}
     >
-      <CardHeader className="self-center sm:ml-4 ml-0 space-y-4 space-x-8 md:flex-row flex-col items-center">
+      <CardHeader className="self-center sm:ml-4 ml-0 space-y-4 sm:space-x-8 space-x-0 md:flex-row flex-col items-center">
         <div className="flex flex-col lg:items-center items-start justify-center space-y-2 md:self-start self-center sm:text-start text-center">
           <div className="bg-white h-24 w-24 rounded-full">
             <img
@@ -111,7 +111,7 @@ const About = forwardRef(function About(_props, ref) {
   return (
     <div
       ref={ref as ForwardedRef<HTMLDivElement>}
-      className="w-[100vw] min-h-[80vh] flex justify-center pt-24 transition-opacity duration-500"
+      className="w-[100vw] min-h-[80vh] flex justify-center transition-opacity duration-500"
     >
       <div
         className=" w-[80vw] py-[100px] rounded-xl flex justify-start flex-col space-y-12"

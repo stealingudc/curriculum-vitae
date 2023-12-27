@@ -52,7 +52,7 @@ const ProjectCard = ({
   <>
     <Card className=" border-0">
       <img className="border rounded-xl" src={image}></img>
-      <CardHeader>
+      <CardHeader className="px-2">
         <CardTitle className="mb-2 underline">
           <a
             href={link}
@@ -79,12 +79,12 @@ const Projects = forwardRef(function Projects(_props, ref) {
         style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
       >
         <Typography variant="h1">My Projects</Typography>
-        <div className="mt-12 flex flex-row justify-center">
+        <div className="mt-12 flex flex-row justify-center w-full">
           <Carousel
             opts={{
               align: "start",
             }}
-            className="sm:max-w-3xl max-w-[350px]"
+            className="sm:max-w-3xl max-w-[80%]"
           >
             <CarouselContent className="mx-4">
               {projects.map((project, i) => (
@@ -97,7 +97,7 @@ const Projects = forwardRef(function Projects(_props, ref) {
             <CarouselNext className="sm:flex hidden" />
           </Carousel>
         </div>
-        <div className="sm:hidden flex flex-col items-center">
+        <div className="sm:hidden mb-8 flex flex-col items-center">
           <MoveHorizontal />
           <p className=" text-neutral-400 italic">Swipe to see more...</p>
         </div>

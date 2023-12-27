@@ -56,7 +56,7 @@ const Perks = forwardRef(function Perks(_props, ref) {
 
   const observerOptions: Omit<IntersectionObserverInit, "root"> = {
     rootMargin: "0px",
-    threshold: 0.3,
+    threshold: 0.1,
   };
 
   const observer = new IntersectionObserver(handleScroll, observerOptions);

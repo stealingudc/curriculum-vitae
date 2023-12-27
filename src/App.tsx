@@ -34,7 +34,7 @@ function App() {
 
   const observerOptions: Omit<IntersectionObserverInit, "root"> = {
     rootMargin: "0px",
-    threshold: 0.3,
+    threshold: 0.1,
   };
 
   const observer = new IntersectionObserver(handleScroll, observerOptions);
@@ -50,7 +50,7 @@ function App() {
       {/* {lipsum} */}
       <Background />
       <Navbar />
-      <Hero ref={refs.hero} />
+      <Hero ref={refs.hero} projectRef={refs.projects} />
       <Perks ref={refs.perks} />
       <Technologies ref={refs.tech} />
       <Projects ref={refs.projects} />

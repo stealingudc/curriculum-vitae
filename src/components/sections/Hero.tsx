@@ -2,11 +2,15 @@ import { ForwardedRef, forwardRef } from "react";
 import { Button } from "../shadcn/ui/button";
 import Typography from "../typography";
 
-const Hero = forwardRef(function Hero(_props, ref) {
+const Hero = forwardRef(function Hero(
+  props: { projectRef: ForwardedRef<HTMLDivElement> },
+  ref
+) {
+  const projectRef = props.projectRef as React.RefObject<HTMLDivElement>;
   return (
     <div
       ref={ref as ForwardedRef<HTMLDivElement>}
-      className="w-[100vw] h-[80vh] flex justify-center pt-24 transition-opacity duration-500"
+      className="w-[100vw] min-h-[80vh] flex justify-center transition-opacity duration-500"
     >
       <div
         className=" w-[80vw] flex flex-col justify-center items-center py-[100px] rounded-xl text-center  p-10"
@@ -20,7 +24,13 @@ const Hero = forwardRef(function Hero(_props, ref) {
           functional applications.
         </Typography>
         <div className="flex mt-8 justify-center space-x-4">
-          <Button variant="outline" className="rounded">
+          <Button
+            variant="outline"
+            className="rounded"
+            onClick={() => {
+              projectRef.current?.scrollIntoView();
+            }}
+          >
             View Projects
           </Button>
           <Button variant="outline" className="rounded">

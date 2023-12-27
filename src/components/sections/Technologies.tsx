@@ -118,7 +118,7 @@ const Technologies = forwardRef(function Technologies(_props, ref) {
 
   const observerOptions: Omit<IntersectionObserverInit, "root"> = {
     rootMargin: "0px",
-    threshold: 0.5,
+    threshold: 0.1,
   };
 
   const objectObserver = new ObjectObserver(sectionRefs, observerOptions);
