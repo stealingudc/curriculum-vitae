@@ -19,10 +19,10 @@ const Navbar = forwardRef(function Navbar(_props, ref) {
         </a>
       </div>
       <div className="flex items-center space-x-4">
-        <a href="https://github.com/stealingudc">
+        <a href="https://github.com/stealingudc" target="_blank">
           <Github />
         </a>
-        <a href="https://stackoverflow.com/users/21427218/stealing-society">
+        <a href="https://stackoverflow.com/users/21427218/stealing-society" target="_blank">
           <StackOverflow />
         </a>
       </div>

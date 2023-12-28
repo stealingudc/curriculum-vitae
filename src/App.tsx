@@ -6,6 +6,7 @@ import Perks from "./components/sections/Perks";
 import Technologies from "./components/sections/Technologies";
 import Projects from "./components/sections/Projects";
 import About from "./components/sections/About";
+import Footer from "./components/sections/Footer";
 
 // const lipsum =
 //   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed bibendum dui. Sed fermentum nulla eget magna placerat, ut euismod erat posuere. Morbi tincidunt vehicula semper. Mauris pulvinar lacinia leo, quis feugiat augue semper et. Vivamus eleifend interdum diam id pretium. Sed rhoncus egestas imperdiet. Duis molestie condimentum felis, non hendrerit lorem fringilla eu. In in mauris porta, pharetra risus lobortis, aliquet metus. Maecenas fermentum nulla sed orci volutpat placerat. Donec a ante eu leo molestie finibus. Sed convallis, nisi non ullamcorper ultrices, nisi sapien ultrices mauris, ut vestibulum magna lacus vitae ex.";
@@ -55,6 +56,7 @@ function App() {
       <Technologies ref={refs.tech} />
       <Projects ref={refs.projects} />
       <About ref={refs.about} />
+      <Footer />
     </div>
   );
 }

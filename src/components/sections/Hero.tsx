@@ -33,9 +33,11 @@ const Hero = forwardRef(function Hero(
           >
             View Projects
           </Button>
+          <a href="/Vladimir-Dragos-Damian_CV.pdf" target="_blank">
           <Button variant="outline" className="rounded">
             View Resume
           </Button>
+          </a>
         </div>
       </div>
     </div>
